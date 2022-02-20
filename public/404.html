@@ -1,0 +1,70 @@
+<!-- 
+    The 404 page
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Page not found</title>
+
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+         * {
+             padding: 0;
+             margin: 0;
+             box-sizing: border-box;
+         }
+        .page404 {
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(135deg, #ff6782, #f5bce9);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 50px;
+        }
+
+        .page404__title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p {
+            color: rgba(255, 255, 255, .75);
+            margin: 10px 20px 20px 20px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .primary-button {
+            padding: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            width: 200px;
+            border: none;
+            border-radius: 50px;
+            background-color: #fff;
+            color: #fa8db0;
+            cursor: pointer;
+        }
+
+     </style>
+ </head>
+ <body>
+    <div class="page404">
+        <img src="./offline.html" alt="offline">
+        <h1 class="page404__title">404<br>Page not found</h1>
+        <p>Sorry, the page you're looking for doesn't exist. You can go back to the login page with the button below.</p>
+        <button class="primary-button" onclick="window.location = '/';">Go to login</button>
+    </div>
+</body>
+</html>

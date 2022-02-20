@@ -1,0 +1,11 @@
+%flex-fullCenter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-columnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

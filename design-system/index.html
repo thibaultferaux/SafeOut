@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Design System</title>
+</head>
+
+<body>
+  <div class="appContainer lightTheme">
+
+    <header class="header">
+      <h1 class="header__title">Design System</h1>
+      <img src="https://lh3.googleusercontent.com/a-/AOh14GiMdpvFdUec5-t-EQGpTwtUCFduBwQMfb7BN_ObZg=s96-c" alt="header__img">
+    </header>
+
+    <main class="design-system">
+
+      <section class="text">
+        <h1>A Visual Type Scale</h1>
+        <h2>A Visual Type Scale</h2>
+        <p>A Visual Type Scale</p>
+        <small>A Visual Type Scale</small>
+      </section>
+
+      <hr />
+
+      <section class="colors">
+        <h2>Colors</h2>
+
+        <div class="colors__grid">
+          <div class="colors__red"></div>
+          <div class="colors__redpink"></div>
+          <div class="colors__pink"></div>
+          <div class="colors__yellow"></div>
+          <div class="colors__green"></div>
+          <div class="colors__white"></div>
+          <div class="colors__lightgrey"></div>
+          <div class="colors__grey"></div>
+          <div class="colors__semi-darkgrey"></div>
+          <div class="colors__almost-darkgrey"></div>
+          <div class="colors__darkgrey"></div>
+          <div class="colors__semi-black"></div>
+          <div class="colors__black"></div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="buttons">
+        <h2>Buttons</h2>
+
+        <div class="buttons--redBg">
+          <button class="primary-button">Auth button</button>  <br>
+          <button class="social-media-button"><img src="../src/img/google.png" alt="logo google"></button>
+          <button class="social-media-button"><img src="../src/img/facebook.png" alt="logo facebook"></button>
+          <button class="social-media-button"><img src="../src/img/twitter.png" alt="logo twitter"></button> <br>
+          <button class="responseBtn responseBtn--accept">
+            <i class="fas fa-check"></i>
+        </button>
+        <button class="responseBtn responseBtn--reject">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="smallBtn smallBtn--white"><small>Detail button</small></button>
+        </div>
+
+        <br /><br />
+
+        <button class="redButton">Red button</button><br>
+        <button class="redButton redButton--yellow">Yellow button</button><br>
+        <button class="redButton redButton--grey">Grey button</button>
+
+        <br /><br />
+
+        <button class="smallBtn"><p class="smallBtn__text">Small button</p></button>
+        
+      </section>
+
+      <hr />
+
+      <section class="forms">
+        <h2>Forms</h2>
+
+        <div class="forms--redBg">
+          <div class="form-validation">
+            <small>This is an example of an error</small>
+          </div>
+          <form>
+            <div class="input-container">
+              <label for="avatar" class="avatar-input">
+                  <input class="primary-input" type="file" name="avatar" id="avatar">
+                  <div class="avatar-input__container">
+                      <i class="fas fa-camera avatar-input__icon"></i>
+                  </div>
+              </label>
+            </div>
+            <div class="input-container">
+                <input class="primary-input" type="email" name="email" placeholder="Email input">
+                <i class="fas fa-envelope input-icon"></i>
+            </div>
+            <div class="input-container">
+                <input class="primary-input" type="text" name="username" placeholder="Text input">
+                <i class="fas fa-user input-icon"></i>
+            </div>
+            <div class="input-container">
+                <input class="primary-input" type="password" name="password" placeholder="Password">
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+            <div class="input-container"> 
+                <button class="primary-button">Login</button>
+            </div>
+          </form>
+        </div>
+
+        <br /><br />
+
+        <div class="forms--white">
+          <form>
+            <div class="secondaryInput">
+              <div class="form-validation">
+                  <small id="error">This is an example of an error</small>
+              </div>
+            </div>
+            <div class="secondaryInput">
+                <input type="text" class="secondaryInput__input">
+                <p class="secondaryInput__title">Text</p>
+            </div>
+            <div class="secondaryInput">
+                <input type="date" name="date" class="secondaryInput__input">
+                <p class="secondaryInput__title">Date</p>
+            </div>
+            <div class="secondaryInput">
+              <div class="flexedInputs">
+                  <input type="text" name="street" class="secondaryInput__input col-3" placeholder="Street">
+                  <input type="text" name="number" class="secondaryInput__input col-1" placeholder="Nr">
+                  <input type="number" name="zip" class="secondaryInput__input col-1" placeholder="Zip">
+                  <input type="text" name="city" class="secondaryInput__input col-3" placeholder="City">
+              </div>
+              <p class="secondaryInput__title">Address</p>
+            </div>
+            <div class="secondaryInput">
+                <button type="submit" class="redButton">Submit</button>
+            </div>
+          </form>
+      </div>
+
+      <br /><br />
+
+      <div class="forms--white">
+        <form action="">
+          <div class="profileInfo__item">
+              <div class="form-validation">
+                  <small id="error">This is an example of an error</small>
+              </div>
+          </div>
+          <div class="profileInfo__item">
+              <small>Text</small>
+              <input type="text"class="tertiaryInput" value="Text input">
+          </div>
+          <div class="profileInfo__item">
+              <small class="profileInfo__label">Phonenumber</small>
+              <input type="tel" name="phonenumber" class="profileInfo__phonenumber tertiaryInput" value="0000000000">
+          </div>
+          <div class="profileInfo__item">
+              <button class="smallBtn">
+                  <p class="smallBtn__text">Submit</p>
+              </button>
+          </div>
+        </form>
+      </div>
+
+      </section>
+
+      <hr />
+
+      <section class="cards">
+        <h2>Cards</h2>
+
+        <div class="eventCard eventCard--invitation">
+          <div class="eventCard__left">
+              <p class="eventCard__title">Invitator</p>
+              <small class="eventCard__subtitle">Event title</small>
+              <small class="eventCard__text">01/01</small>
+          </div>
+          <div class="eventCard__right">
+              <button class="responseBtn responseBtn--accept">
+                  <i class="fas fa-check"></i>
+              </button>
+              <button class="responseBtn responseBtn--reject">
+                  <i class="fas fa-times"></i>
+              </button>
+          </div>
+        </div>
+
+        <div class="eventCard eventCard--own">
+          <div class="eventCard__left">
+              <p class="eventCard__title">Own event title</p>
+              <p class="eventCard__date">01/01</p>
+              <small class="eventCard__text">Event address</small>
+          </div>
+          <div class="eventCard__right">
+              <button class="smallBtn smallBtn--white">
+                  <small>Details</small>
+              </button>
+          </div>
+        </div>
+
+        <div class="eventCard eventCard--joined">
+          <div class="eventCard__left">
+              <p class="eventCard__title">Joined event title</p>
+              <p class="eventCard__date">01/01</p>
+              <small class="eventCard__text">Event owner</small>
+              <small class="eventCard__text--bold">Event address</small>
+          </div>
+          <div class="eventCard__right">
+              <button class="smallBtn smallBtn--white">
+                  <small>Details</small>
+              </button>
+          </div>
+        </div>
+
+      </section>
+
+      <hr />
+
+      <section class="other-components">
+        <h2>Other components</h2>
+
+        <nav class="navigation">
+          <button class="navigation__item  navigation__item--selected"><i class="fas fa-home"></i></button>
+          <button class="navigation__item"><i class="fab fa-wpforms"></i></button>
+          <button class="navigation__item--circle"><i class="fas fa-plus"></i></button>
+          <button class="navigation__item"><i class="fas fa-egg"></i></button>
+          <button class="navigation__item"><i class="fas fa-cog"></i></button>
+        </nav>
+
+        <br /><br />
+
+        <div class="modal">
+          <h2 class="modal__title">Modal title</h2>
+          <p class="modal__description">Modal description text</p>
+          <button class="redButton redButton--grey">Secondary click</button>
+          <button class="redButton">Primary click</button>
+        </div>
+
+        <br /><br />
+
+        <div class="toggleMenu">
+          <input type="checkbox" id="menuToggle">
+          <label for="menuToggle" class="toggleMenu__switch">
+              <div class="toggleMenu__toggle"></div>
+              <div class="toggleMenu__titles">
+                  <p class="toggleMenu__myEvents">My events</p>
+                  <p class="toggleMenu__joinedEvents">Joined events</p>
+                </div>
+          </label>
+        </div>
+
+        <br /><br />
+
+          <div class="toggleTheme">
+              <input type="checkbox" id="toggleTheme">
+              <label for="toggleTheme" class="toggleTheme__switch">
+                  <div class="toggleTheme__toggle"></div>
+                  <div class="toggleTheme__titles">
+                      <p class="toggleTheme__light">Light</p>
+                      <p class="toggleTheme__dark">Dark</p>
+                  </div>
+              </label>
+          </div>
+
+        <br /><br />
+
+        <div class="circle-loader"></div>
+
+    </main>
+  </div>
+</body>
+
+</html>

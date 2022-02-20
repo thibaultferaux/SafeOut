@@ -1,0 +1,26 @@
+@use "../abstracts/extends";
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mediamixins" as media;
+@use "sass:map";
+
+.register {
+    height: 100vh;
+    width: 100%;
+    @include mix.gradient(135deg, vars.$pink-gradient);
+    color: map.get(vars.$colors, white);
+    @extend %flex-columnCenter;
+    justify-content: center;
+
+    &__title {
+        margin-bottom: 20px;
+
+        @include media.small {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: map.get(vars.$colors, white);
+    }
+}

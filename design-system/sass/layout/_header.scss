@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+@use "../themes/themes" as t;
+@use "sass:map";
+
+header {
+    @include t.theme() {
+        background-color: t.theme-get(lightgrey);
+    }
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    border-radius: 0 0 30px 30px;
+
+
+    img {
+        @include mix.circle(60px);
+        object-fit: cover;
+        border: 2px solid;
+        @include t.theme() {
+            border-color: t.theme-get(white);
+        }
+    }
+}

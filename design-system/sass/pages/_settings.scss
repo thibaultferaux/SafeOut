@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as vars;
+@use "sass:map";
+
+.profileInfo {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        margin-top: 10px;
+        font-weight: 500px;
+
+        .form-validation {
+            text-align: center;
+            padding: 0 20px;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 700;
+        }
+
+        .redButton--yellow {
+            margin-top: 25px;
+        }
+    }
+}

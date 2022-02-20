@@ -1,0 +1,44 @@
+@use "../abstracts/functions" as func;
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+@use "../themes/themes" as t;
+@use "sass:map";
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    @include t.theme() {
+        background-color: t.theme-get(white);
+    }
+    box-shadow: 0 0 80px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 40px 40px 0 0;
+
+    &__item {
+        background: none;
+        border: none;
+        font-size: func.pxtorem(25);
+        @include t.theme() {
+            color: t.theme-get(grey);
+        }
+
+        &--selected {
+            @include t.theme() {
+                color: map.get(vars.$colors, red);
+            }
+        }
+
+        &--circle {
+            font-size: func.pxtorem(25);
+            background: map.get(vars.$colors, red);
+            color: map.get(vars.$colors, white);
+            border: none;
+            @include mix.circle(50px);
+        }
+    }
+}

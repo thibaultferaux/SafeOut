@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as vars;
+
+@mixin small {
+    @media (max-height: #{vars.$small-height}) {
+        @content;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as vars;
+
+// snippet from https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss
+$theme-map: null;
+@mixin theme() {
+    @each $theme, $map in vars.$themes {
+
+      $theme-map: $map !global;
+  
+      .#{$theme} & {
+        @content;
+      }
+    }
+    $theme-map: null !global;
+}
+
+@function theme-get($key) {
+    @return map-get($theme-map, $key);
+}
+
+#appContainer.darkTheme {
+    background-color: #26242E;
+    color: #fff;
+}
+
+#appContainer.lightTheme {
+    background-color: #fff;
+    color: #141318;
+}

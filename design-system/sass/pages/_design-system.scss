@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/extends';
+@use 'sass:map';
+
+.design-system {
+    h1, h2 {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .text {
+        p, small {
+            display: block;
+            margin: 20px 0;
+        }
+    }
+
+    section {
+        margin: 20px 0;
+    }
+
+    .colors {
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            max-width: 40em;
+            grid-gap: 20px;
+            row-gap: 20px;
+
+            div {
+                height: 100px;
+                border-radius: 10px;
+            }
+        }
+
+        &__red {
+            background-color: map.get(vars.$colors, red);
+        }
+        &__redpink {
+            background-color: map.get(vars.$colors, redpink);
+        }
+        &__pink {
+            background-color: map.get(vars.$colors, pink);
+        }
+        &__yellow {
+            background-color: map.get(vars.$colors, yellow);
+        }
+        &__green {
+            background-color: map.get(vars.$colors, green);
+        }
+        &__white {
+            background-color: map.get(vars.$colors, white);
+            border: 2px solid map.get(vars.$colors, grey);
+        }
+        &__lightgrey {
+            background-color: map.get(vars.$colors, lightgrey);
+        }
+        &__grey {
+            background-color: map.get(vars.$colors, grey);
+        }
+        &__semi-darkgrey {
+            background-color: map.get(vars.$colors, semi-darkgrey);
+        }
+        &__almost-darkgrey {
+            background-color: #63616C;
+        }
+        &__darkgrey {
+            background-color: #33313C,;
+        }
+        &__semi-black {
+            background-color: #26242E;
+        }
+        &__black {
+            background-color: map.get(vars.$colors, black);
+        }
+    }
+
+    .buttons {
+        &--redBg {
+            background-color: map.get(vars.$colors, red);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px;
+            button {
+                margin: 10px;
+            }
+        }
+
+        .redButton {
+            max-width: 400px;
+        }
+    }
+
+    .forms {
+        &--redBg {
+            background-color: map.get(vars.$colors, red);
+            padding: 10px;
+            border-radius: 10px;
+            @extend %flex-columnCenter;
+            max-width: 400px;
+        }
+
+        &--white {
+            display: inline-block;
+            max-width: 400px;
+        }
+
+        .avatar-input {
+            color: map.get(vars.$colors, white);
+        }
+
+        .form-validation {
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+
+    }
+
+    .cards {
+        max-width: 400px;
+    }
+
+    .other-components {
+        max-width: 400px;
+    }
+
+    .navigation {
+        position: inherit;
+    }
+}

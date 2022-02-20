@@ -1,0 +1,6 @@
+@use "sass:math";
+
+@for $i from 1 through 4 {
+    // $width: math.percentage(math.div($i, 4));
+    .col-#{$i} { grid-column: span $i; }
+}

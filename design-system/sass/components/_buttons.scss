@@ -1,0 +1,116 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/mediamixins" as media;
+@use "../themes/themes" as t;
+@use "../abstracts/extends";
+@use "sass:map";
+
+.primary-button {
+    padding: 12px;
+    font-size: func.pxtorem(24);
+    font-weight: 700;
+    width: 200px;
+    border: none;
+    border-radius: 50px;
+    background-color: map.get(vars.$colors, white);
+    color: map.get(vars.$colors, redpink);
+    cursor: pointer;
+
+    @include media.small {
+        font-size: func.pxtorem(20);
+    }
+}
+
+.social-media-button {
+    @include mix.circle(55px);
+    border: none;
+    background-color: map.get(vars.$colors, white);
+    @extend %flex-fullCenter;
+    margin: 0 8px;
+
+    @include media.small {
+        @include mix.circle(45px);
+    }
+
+
+    img {
+        width: 25px;
+    }
+}
+
+.responseBtn {
+    @include mix.circle(35px);
+    background-color: map.get(vars.$colors, white);
+    border: none;
+    @extend %flex-fullCenter;
+
+    &--accept {
+        color: map.get(vars.$colors, green);
+    }
+
+    &--reject {
+        color: map.get(vars.$colors, red);
+    }
+
+    i {
+        font-size: func.pxtorem(20);
+    }
+}
+
+.smallBtn {
+    border: none;
+    background-color: map.get(vars.$colors, red);
+    color: map.get(vars.$colors, white);
+    padding: 0 12.5px;
+    height: 25px;
+    @extend %flex-fullCenter;
+    border-radius: 5px;
+
+    i {
+        margin-right: 7px;
+        font-size: func.pxtorem(14);
+    }
+
+    &__text {
+        font-weight: 700;
+    }
+
+    small {
+        font-weight: 600;
+    }
+
+    &--white {
+        background-color: map.get(vars.$colors, white);
+        color: map.get(vars.$colors, black);
+
+        small {
+            font-weight: 700;
+        }
+    }
+}
+
+.redButton {
+    margin-top: 10px;
+    width: 100%;
+    line-height: func.pxtorem(50);
+    background-color: map.get(vars.$colors, red);
+    border: none;
+    border-radius: 50px;
+    color: map.get(vars.$colors, white);
+    font-weight: 600;
+    @extend %flex-fullCenter;
+    gap: 8px;
+
+    i {
+        font-size: func.pxtorem(14);
+    }
+
+    &--yellow {
+        background-color: map.get(vars.$colors, yellow);
+    }
+
+    &--grey {
+        background-color: map.get(vars.$colors, grey);
+    }
+}

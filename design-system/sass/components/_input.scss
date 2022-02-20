@@ -1,0 +1,202 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+@use "../themes/themes" as t;
+@use "../abstracts/extends";
+@use "sass:map";
+
+.input-container {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+    max-width: 280px;
+}
+
+.primary-input {
+    max-width: 280px;
+    border: 2.5px solid map.get(vars.$colors, white);
+    border-radius: 50px;
+    background-color: transparent;
+    outline: none;
+    padding: 17px 20px 17px 40px;
+    font-size: func.pxtorem(14);
+    font-weight: 500;
+    color: map.get(vars.$colors, white);
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px map.get(vars.$colors, red) inset;
+        -webkit-text-fill-color: map.get(vars.$colors, white);
+    }
+
+    &::placeholder {
+        color: map.get(vars.$colors, white);
+    }
+
+    &:focus {
+        background-color: map.get(vars.$colors, white);
+        color: map.get(vars.$colors, red);
+        font-weight: 500;
+    }
+
+    &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px map.get(vars.$colors, white) inset;
+        -webkit-text-fill-color: map.get(vars.$colors, red);
+    }
+
+    &:focus + .input-icon {
+        color: map.get(vars.$colors, red);
+
+    }
+}
+
+.input-icon {
+    position: absolute;
+    padding: 19.5px;
+    color: map.get(vars.$colors, white);
+    left: 0;
+}
+
+.avatar-input {
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    &__container{
+        @include mix.circle(70px);
+        border: 2px solid map.get(vars.$colors, white);
+        @extend %flex-fullCenter;
+    }
+
+    &__icon {
+        font-size: func.pxtorem(24);
+    }
+}
+
+.secondaryInput {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .flexedInputs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    &__title {
+        @include t.theme() {
+            color: t.theme-get(grey);
+        }
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    &__input {
+        width: 100%;
+        @include t.theme() {
+            color: t.theme-get(black);
+            border-color: t.theme-get(grey);
+            background-color: t.theme-get(bg-white);
+        }
+        border: 2px solid;
+        outline-color: map.get(vars.$colors, red);
+        line-height: 2.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+
+    &__input::placeholder {
+        @include t.theme() {
+            color: t.theme-get(grey);
+        }
+        font-weight: 500;
+        font-size: func.pxtorem(14);
+    }
+
+    &__input:focus + &__title {
+        color: map.get(vars.$colors, red);
+    }
+
+    .autocomplete:focus-within + &__title, .flexedInputs:focus-within + &__title {
+        color: map.get(vars.$colors, red);
+    }
+
+    .form-validation {
+        text-align: center;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    input[type='date'], input[type='datetime-local'] {
+        min-height: 2.75rem;
+        @include t.theme() {
+            color: t.theme-get(black);
+            border-color: t.theme-get(grey);
+            background-color: t.theme-get(bg-white);
+        }
+    }
+}
+
+.tertiaryInput {
+    @include t.theme() {
+        color: t.theme-get(black);
+        border-color: t.theme-get(black);
+    }
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: -2px;
+}
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+
+    &__items {
+        position: absolute;
+        border: 1px solid;
+        @include t.theme() {
+            border-color: t.theme-get(lightgrey);
+        }
+        border-bottom: none;
+        border-top: none;
+        z-index: 20;
+        top: 100%;
+        left: 0;
+        right: 0;
+    
+        div {
+            padding: 10px;
+            cursor: pointer;
+            @include t.theme() {
+                background-color: t.theme-get(white);
+                border-color: t.theme-get(lightgrey);
+            }
+            border-bottom: 1px solid;
+        }
+    
+        div:hover {
+            @include t.theme() {
+                background-color: t.theme-get(lightgrey);
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

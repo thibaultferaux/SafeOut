@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use "../abstracts/variables" as vars;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mediamixins" as media;
+@use "../themes/themes" as t;
+
+body {
+    font-family: vars.$text-font;
+    @include t.theme() {
+        color: t.theme-get(black);
+    }
+}
+
+h1 {
+    font-size: func.pxtorem(32);
+    font-weight: 700;
+    margin: 0;
+    @include media.small {
+        font-size: func.pxtorem(28);
+    }
+}
+
+h2 {
+    font-size: func.pxtorem(24);
+    font-weight: 700;
+    margin: 0;
+    @include media.small {
+        font-size: func.pxtorem(20);
+    }
+}
+
+p {
+    font-size: func.pxtorem(16);
+    font-weight: 500;
+    @include media.small {
+        font-size: func.pxtorem(14);
+    }
+}
+
+small {
+    font-size: func.pxtorem(14);
+    font-weight: 500;
+    @include media.small {
+        font-size: func.pxtorem(12);
+    }
+}
+
+.transparent-text {
+    color: vars.$transparentText;
+}

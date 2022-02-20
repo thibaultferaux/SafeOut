@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as vars;
+@use "sass:map";
+
+.overflow-hidden {
+    overflow: hidden;
+    height: 100%;
+}
+
+.overflowY {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.underline--white {
+    border-bottom: 3px solid map.get(vars.$colors, white);
+    padding-bottom: .5px;
+}
+
+.hide {
+    display: none;
+}

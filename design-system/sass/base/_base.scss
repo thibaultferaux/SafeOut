@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as vars;
+@use "../themes/themes" as t;
+@use "sass:map";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    @include t.theme() {
+        color: t.theme-get(black);
+    }
+}

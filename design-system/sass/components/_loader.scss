@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+@use "sass:map";
+
+#portal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    & .activityIndicator {
+        display: flex;
+        background-color: map.get(vars.$colors, white);
+        opacity: .5;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.circle-loader {
+    @include mix.circle(5rem);
+    border: .5rem solid transparent;
+    border-top: .5rem solid map.get(vars.$colors, red);
+    animation: spin 1s ease infinite;
+    display: grid;
+    justify-self: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

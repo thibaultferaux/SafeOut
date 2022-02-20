@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as vars;
+@use "../themes/themes" as t;
+@use "../abstracts/extends";
+@use "sass:map";
+
+.clicker {
+    position: absolute;
+    inset: 0;
+    @extend %flex-fullCenter;
+
+    &__container {
+        @extend %flex-columnCenter;
+    }
+
+    &__click {
+        background-color: transparent;
+        border: none;
+        margin: 20px 0;
+    }
+
+    &__egg {
+        width: 180px;
+        transition: transform .1s ease-in-out;
+    }
+
+    &__click:active &__egg {
+        transform: scale(.9);
+    }
+
+    &__uberEats {
+        width: 165px;
+    }
+
+    &__instructions {
+        @include t.theme() {
+            color: t.theme-get(grey);
+        }
+    }
+
+    &__description {
+        margin-top: 5px;
+        max-width: 230px;
+        text-align: center;
+    }
+
+    &__code {
+        color: map.get(vars.$colors, red);
+        border: 3px solid map.get(vars.$colors, red);
+        padding: 5px;
+    }
+    
+}

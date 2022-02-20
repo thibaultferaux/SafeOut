@@ -1,0 +1,42 @@
+@use "sass:map";
+
+$dark-theme: true !default;
+
+$colors: (
+  red: #ff6782,
+  redpink: #fa8db0,
+  pink: #f5bce9,
+  yellow: #ffcb67,
+  green: #b3dfb7,
+  white: #fff,
+  black: #141318,
+  lightgrey: #f4f4f4,
+  grey: #e1e0e8,
+  semi-darkgrey: #85848D,
+) !default;
+
+$themes: (
+  lightTheme: (
+    bg-white: #fff,
+    white: #fff,
+    black: #141318,
+    lightgrey: #f4f4f4,
+    grey: #e1e0e8,
+  ),
+  darkTheme: (
+    bg-white: #26242E,
+    white: #33313C,
+    black: #fff,
+    lightgrey: #141318,
+    grey: #63616C,
+    semi-darkgrey: #85848D,
+  )
+);
+
+$transparentText: rgba(255, 255, 255, .75);
+
+$pink-gradient: map.get($colors, red), map.get($colors, pink);
+
+$text-font: 'Inter', sans-serif;
+
+$small-height: 720px;

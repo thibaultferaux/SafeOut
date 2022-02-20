@@ -1,0 +1,138 @@
+@use "../abstracts/variables" as vars;
+@use "../themes/themes" as t;
+@use "sass:map";
+
+.toggleMenu {
+    width: 100%;
+    margin: 20px 0 15px 0;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    &__switch, &__toggle {
+        height: 50px;
+        border-radius: 100px;
+    }
+
+    &__switch {
+        display: block;
+        width: 100%;
+        @include t.theme() {
+            background-color: t.theme-get(lightgrey);
+        }
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__toggle {
+        position: absolute;
+        width: 50%;
+        background-color: map.get(vars.$colors, red);
+        transition: transform .5s cubic-bezier(.2, 1, .2, 1);
+    }
+
+    &__titles {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
+        p {
+            font-weight: 600;
+            display: inline-flex;
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__myEvents {
+        color: map.get(vars.$colors, white);
+    }
+
+    input[type="checkbox"]:checked + &__switch &__toggle {
+        transform: translateX(100%);
+    }
+    input[type="checkbox"]:checked + &__switch &__myEvents {
+        @include t.theme() {
+            color: t.theme-get(black);
+        }
+    }
+    input[type="checkbox"]:checked + &__switch &__joinedEvents {
+        color: map.get(vars.$colors, white);
+    }
+}
+
+.toggleTheme {
+    width: 75%;
+    margin: 15px auto 20px auto;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    &__switch, &__toggle {
+        height: 60px;
+        border-radius: 100px;
+    }
+
+    &__switch {
+        display: block;
+        width: 100%;
+        @include t.theme() {
+            background-color: t.theme-get(lightgrey);
+        }
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__toggle {
+        position: absolute;
+        width: 50%;
+        @include t.theme() {
+            background-color: t.theme-get(white);
+        }
+        box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+        transition: transform .5s cubic-bezier(.2, 1, .2, 1);
+    }
+
+    &__titles {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
+        p {
+            font-weight: 700;
+            display: inline-flex;
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__dark {
+        color: map.get(vars.$colors, semi-darkgrey);
+    }
+
+    input[type="checkbox"]:checked + &__switch &__toggle {
+        transform: translateX(100%);
+    }
+    input[type="checkbox"]:checked + &__switch &__dark {
+        @include t.theme() {
+            color: t.theme-get(black);
+        }
+    }
+    input[type="checkbox"]:checked + &__switch &__light {
+        @include t.theme() {
+            color: t.theme-get(semi-darkgrey);
+        }
+    }
+}

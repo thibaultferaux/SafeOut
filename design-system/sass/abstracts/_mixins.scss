@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@mixin gradient($direction, $list) { 
+    background: linear-gradient($direction, $list);  
+}
+
+@mixin circle($width) {
+    width: $width;
+    height: $width;
+    border-radius: math.div($width, 2);
+}
+
+

@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as vars;
+@use "../themes/themes" as t;
+@use "sass:map";
+
+.eventCard {
+    width: 100%;
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    &--invitation {
+        background-color: map.get(vars.$colors, yellow);
+
+        .eventCard__title {
+            margin-bottom: 3px;
+        }
+    }
+
+    &--own {
+        background-color: map.get(vars.$colors, green);
+    }
+
+    &--joined {
+        background-color: map.get(vars.$colors, pink);
+    }
+
+    &__title {
+        font-weight: 700;
+        @include t.theme() {
+            color: t.theme-get(white);
+        }
+    }
+
+    &__date {
+        @include t.theme() {
+            color: t.theme-get(white);
+        }
+        margin-bottom: 3px;
+    }
+
+    &__subtitle {
+        @include t.theme() {
+            color: t.theme-get(white);
+        }
+        font-weight: 700;
+        display: block;
+        line-height: 1rem;
+    }
+
+    &__text, &__text--bold {
+        @include t.theme() {
+            color: t.theme-get(white);
+        }
+        display: block;
+        line-height: 1rem;
+        font-weight: 600;
+    }
+
+    &__text--bold {
+        font-weight: 700;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+}
